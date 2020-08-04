@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Registred aliases</title>
+    </head>
+    <body>
+
+    <h1>Registred aliases</h1>
+    {% if alias %}
+    <h4>"{{alias}}" is not registred.</h4>
+
+    {% endif %}
+
+    <table>
+        <thead>
+            <th><h3>Alias</h3></th>
+            <th><h3>URL</h3></th>
+            <th><h3>Description</h3></th>
+
+        </thead>
+        <tbody>
+            {% for key, value in aliases.items %}
+            <tr>
+            <td><a>{{ key }}</a></td>
+            <td><a href="{{value.url}}">{{ value.url }}</a></td>
+            <td><a>{{ value.des }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <br>
+    <br>
+    <p>Last modified time: {{lastModifiedDateTime}}</p>
+
+    </body>
+</html>
+
